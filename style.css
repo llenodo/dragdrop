@@ -1,0 +1,183 @@
+/* normally I prefer SASS, fyi */
+
+body {
+    font-family: helvetica, arial, sans-serif;
+}
+
+#todo-app {
+    max-width:900px;
+    margin:40px auto;
+    padding:10px;
+    background-color:#ddd;
+}
+
+h1 {
+	text-align: center
+}
+
+.top-bar {
+    height: 120px;
+    padding: 10px;
+}
+    .top-bar .add-task-container {
+        width:80%;
+        float:left;
+        margin-top:60px;
+    }
+        .top-bar .add-task-container button {
+            padding: 5px 8px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            border:1px solid #888;
+            color:white;
+            cursor:pointer;
+            background-color:#444;
+            background: -moz-linear-gradient(top, #444, #444 50%, #222 51%, #222);  
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(.5, #444), color-stop(.5, #222), to(#222)); 
+        }
+        .top-bar .add-task-container button:hover {
+            background-color:#555;
+            background: -moz-linear-gradient(top, #555, #555 50%, #333 51%, #333);  
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #555), color-stop(.5, #555), color-stop(.5, #333), to(#333)); 
+        }
+        .top-bar .add-task-container input {
+            width: 300px;
+            font-size: 16px;
+            padding: 6px;
+        }
+
+    .top-bar .total-counter {
+        width:80px;
+        float:right;
+    }
+        .top-bar .total-counter>h3{
+            margin:0;
+            text-align: center;
+        }
+
+.counter {
+    float:right;
+    width:80px;
+    background-color:white;
+	border-radius: 4px;
+	box-shadow: inset 1px 2px 3px #CCC;
+	padding:10px 0px;
+}
+.counter .count, .counter .item-type {
+    text-align: center;
+    margin: 0px;
+}
+
+.counter .count {
+    color:black;
+
+}
+
+.counter .item-type {
+    color:#999;
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:normal;
+}
+
+.task-group-container {
+    float:left;
+}
+
+.task-group {
+    width: 280px;
+    padding: 10px;
+    
+    position:relative;
+}
+
+    .dropzone {
+        width:100%;
+        height:100%;
+        position:absolute;
+        left:0;
+        top:0;
+        display:none;
+        /*background-color:blue; for development 
+        opacity: .15;*/
+    }
+    
+    .task-group:last-child {
+        margin-right:0px;
+    }
+        .task-group header {
+            background-color: #888;
+            color: white;
+            padding:10px;
+            border-bottom: 1px solid #ddd;
+        }
+            .task-group header h2.title {
+                float:left;
+                width:170px;
+                margin: 14px 0px;
+            }
+
+.task-list{
+    margin:0px;
+    padding:0px;
+}
+
+.task {
+    padding:16px;
+    background-color: white;
+    list-style: none;   
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    cursor: move;
+    font-size: 14px;
+	color: #222;
+}
+
+/* general */
+
+.errors {
+    border: 1px solid red;
+    color: red;
+    padding: 3px 4px 2px 4px;
+}
+
+.dragging {
+    opacity:0.3;
+    border: 1px dashed black;\9; /* IE8 and below dont support transparency, give them a border*/  
+}
+    
+.dragover {
+    opacity:.5;
+}
+.dragover.valid-drag-target {
+    background-color: green;
+}
+.dragover.invalid-drag-target {
+    background-color: red;
+}
+
+.invalid-drag-target-errors {
+	position: absolute;
+    text-align: center;
+    top: -20px;
+    left: 25%;
+    right: 25%;
+    color: red;
+}
+
+/*clearfix from http://nicolasgallagher.com/micro-clearfix-hack/*/
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/**
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+.clearfix {
+    *zoom: 1;
+}

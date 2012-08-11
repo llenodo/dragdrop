@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Todo App Demo with backbone.js html5 drag/drop</title>
+        <link rel="stylesheet" rel="stylesheet" href="style.css">
+	</head>
+	
+	<body>
+        <h1>Todo App Demo with backbone.js html5 drag/drop</h1>
+        <div id="todo-app">
+            <div class="top-bar clearfix">
+                <div class="add-task-container">
+                    <button>add project</button>
+                    <input type="text" placeholder="type task name and press enter" style="display:none;"></input>
+                    <span class="errors" style="display:none;"></span>
+                </div>
+                <div class="total-counter">
+                    <h3 class="total">TOTAL</h2>
+                    <div class="counter">
+                        <h3 class="count"></h3>
+                        <h4 class="item-type">Projects</h4>
+                    </div>
+                </div>
+            </div>
+            <div id="task-groups-container" class="clearfix">
+                <div id="todos" class="task-group-container"></div>
+                <div id="inprogress" class="task-group-container"></div>
+                <div id="done" class="task-group-container"></div>
+            </div>
+        </div>
+
+        <div id="templates" style="display:none;">
+            <div id="task-template">
+                {{text}}
+            </div>
+
+            <div id="task-group-template">
+                <div class="task-group">
+                    <span class="invalid-drag-target-errors" style="display:none">Invalid drag target</span>
+                    <div class="dropzone"></div>
+                    <header class="clearfix">
+                        <h2 class="title">{{type}}</h2>
+                        <div class="counter">
+                            <h3 class="count"></h3>
+                            <h4 class="item-type">Projects</h4>
+                        </div>
+                    </header>
+                    <ul class="task-list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</body>
+
+    <script src="js/modernizr-2.6.1.js"></script>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <!--json2.js and underscore are for backbone.js-->
+    <script src="js/json2.js"></script>             
+    <script src="js/underscore-min.js"></script>
+    <!--handlebars is totally overkill for this project but I like it :) -->
+    <script src="js/handlebars-1.0.0.beta.6.js"></script>
+    <script src="js/backbone-0.9.2.js"></script>
+    <script src="js/todo-app.js"></script>
+
+</html>
